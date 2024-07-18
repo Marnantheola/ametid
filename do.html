@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Stack</title>
+    <style>
+        .vertical-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* space between items */
+        }
+
+        .item {
+            padding: 10px;
+            background-color: lightgray;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="stackContainer"></div>
+
+    <script>
+        function createVerticalStack(containerId, items) {
+            const container = document.getElementById(containerId);
+            container.classList.add('vertical-stack');
+
+            items.forEach(itemContent => {
+                const item = document.createElement('div');
+                item.classList.add('item');
+                item.textContent = itemContent;
+                container.appendChild(item);
+            });
+        }
+
+        // Example usage
+        createVerticalStack('stackContainer', ['Item 1', 'Item 2', 'Item 3']);
+    </script>
+</body>
+</html>
